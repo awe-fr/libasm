@@ -13,7 +13,7 @@ section .text
 
 		error_manager:
 			neg rax							;invert rax and get error code
-			mov	r10, rax					;save rax into r10
+			mov r10, rax					;save rax into r10
 			call __errno_location WRT ..plt	;get errno into rax
 			mov [rax], r10					;push r10 into errno
 			mov rax, -1						;set rax to -1 because write failed
