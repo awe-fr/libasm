@@ -12,9 +12,9 @@ section .text
 		ret									;return result of write
 
 		error_manager:
-			neg		rax						;invert rax and get error code
-			push	rax						;save rax into the stack
+			neg rax							;invert rax and get error code
+			mov	r10, rax					;save rax into r10
 			call __errno_location WRT ..plt	;get errno into rax
-			pop		qword[rax]				;get stack value (and cast) into errno
-			mov		rax, -1					;set rax to -1 because write failed
+			mov [rax], r10					;push r10 into errno
+			mov rax, -1						;set rax to -1 because write failed
 			ret								;return rax
