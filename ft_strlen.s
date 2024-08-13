@@ -7,5 +7,12 @@ section .text
         mov rcx, rdi    ;get first arg
         
         loop:
-            add rax, 1  ;add one to the loop
+            mov dl, [rcx]   ;get the first charactere
+            test dl, dl     ;compare if null
+            jz result       ;return if true
+            inc rax         ;add one to the loop
+            inc rcx         ;get the next charactere
+            jmp loop        ;continue the loop
 
+        result:
+            ret
