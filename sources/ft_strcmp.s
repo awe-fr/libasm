@@ -22,18 +22,7 @@ section .text
 			movzx rax, r10b	;convert the charactere in a higher register
 			movzx rcx, r11b	;convert the other charactere in a higher register
 			sub rax, rcx	;get the size difference between characteres
-			cmp rax, 0		;check if negative of positive
-			js setneg		;if negative go in setneg
-			jns setpos		;if positive go in setpos
-			ret				;security ret
-
-		setneg:
-			mov rax, -1		;replace rax by -1
-			ret				;return rax
-
-		setpos:
-			mov rax, 1		;replace rax by 1
-			ret				;return rax
+			ret				;ret rax
 
 		presult:
 			ret				;return 0

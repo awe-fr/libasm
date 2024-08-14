@@ -1,11 +1,11 @@
 NAME = libasm.a
 
-SRCS = Sources/ft_strlen.s\
-		Sources/ft_strcpy.s\
-		Sources/ft_strcmp.s\
-		Sources/ft_write.s\
-		Sources/ft_read.s\
-		Sources/ft_strdup.s\
+SRCS = sources/ft_strlen.s\
+		sources/ft_strcpy.s\
+		sources/ft_strcmp.s\
+		sources/ft_write.s\
+		sources/ft_read.s\
+		sources/ft_strdup.s\
 
 OBJS = $(SRCS:.s=.o)
 

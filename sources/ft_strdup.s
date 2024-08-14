@@ -12,7 +12,7 @@ section .text
 		call ft_strlen						;get len of string
 		mov rdi, rax						;put len to alloc in rdi
 		inc rdi								;add one for the null byte
-		call malloc							;alloc memory needed
+		call malloc	WRT ..plt				;alloc memory needed
 		cmp rax, 0							;check if malloc failed
 		jz error_manager					;if failed go to error manager
 		mov rdi, rax						;put the new string in rdi
