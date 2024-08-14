@@ -34,9 +34,10 @@ The library, named libasm.a, must include the following functions, rewritten in 
 ### Compilation Instructions
 
    - ```make``` compile the lib.
+   - ```make all``` compile the lib.
    - ```make clean``` delete ```.o``` files.
    - ```make fclean``` delete ```.o``` files and the ```libasm.a```.
    - ```make re``` use ```fclean``` and recompile the lib.
 
-After compiled the lib, include ```./libasm/header/libasm.h``` in your project and compile your code with ```libasm.a```.
+After compiled the lib, include ```./header/libasm.h``` in your project and compile your code with ```libasm.a```.
    
