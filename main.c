@@ -155,9 +155,24 @@ int main(void) {
     errno = 0;
     printf("\n");
     rd1[150] = '\0';
-    printf("last read : %s\n\n", rd1);
+    printf("last read : \"%s\"\n\n", rd1);
     close(file3);
     free(rd1);
 
     printf("----------------ft_strdup----------------\n\n");
+
+    char dup1[10] = "coucou !\0";
+    printf("string : %s\n", dup1);
+    char *dup1res1 = strdup(dup1);
+    printf(" : real   : %s\n", dup1res1);
+    perror("errno value is ");
+    errno = 0;
+    free(dup1res1);
+    char *dup1res2 = ft_strdup(dup1);
+    printf(" : libasm : %s\n", dup1res2);
+    perror("errno value is ");
+    errno = 0;
+    free(dup1res2);
+    printf("\n");
+
 }

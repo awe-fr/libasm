@@ -5,6 +5,7 @@ SRCS = Sources/ft_strlen.s\
 		Sources/ft_strcmp.s\
 		Sources/ft_write.s\
 		Sources/ft_read.s\
+		Sources/ft_strdup.s\
 
 OBJS = $(SRCS:.s=.o)
 
