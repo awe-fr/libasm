@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <errno.h>
+#include <fcntl.h>
 
 int main(void) {
     printf("----------------ft_strlen----------------\n\n");
@@ -109,5 +110,54 @@ int main(void) {
 
     printf("-----------------ft_read-----------------\n\n");
 
+    int file1 = open("./testforread.txt", O_RDONLY);
+    char *rd1 = malloc(sizeof(char) * 1000);
+    printf("real   : %ld\n", read(file1, rd1, 10));
+    perror("errno value is ");
+    errno = 0;
+    printf("libasm : %ld\n", ft_read(file1, rd1, 10));
+    perror("errno value is ");
+    errno = 0;
+    printf("\n");
 
+    printf("real   : %ld\n", read(file1, rd1, 150));
+    perror("errno value is ");
+    errno = 0;
+    printf("libasm : %ld\n", ft_read(file1, rd1, 150));
+    perror("errno value is ");
+    errno = 0;
+    printf("\n");
+
+    printf("real   : %ld\n", read(file1, rd1, 1000));
+    perror("errno value is ");
+    errno = 0;
+    printf("libasm : %ld\n", ft_read(file1, rd1, 1000));
+    perror("errno value is ");
+    errno = 0;
+    printf("\n");
+    close(file1);
+
+    int file2 = open("./nan", O_RDONLY);
+    printf("real   : %ld\n", read(file2, rd1, 1000));
+    perror("errno value is ");
+    errno = 0;
+    printf("libasm : %ld\n", ft_read(file2, rd1, 1000));
+    perror("errno value is ");
+    errno = 0;
+    printf("\n");
+
+    int file3 = open("Sources", O_RDONLY);
+    printf("real   : %ld\n", read(file3, rd1, 1000));
+    perror("errno value is ");
+    errno = 0;
+    printf("libasm : %ld\n", ft_read(file3, rd1, 1000));
+    perror("errno value is ");
+    errno = 0;
+    printf("\n");
+    rd1[150] = '\0';
+    printf("last read : %s\n\n", rd1);
+    close(file3);
+    free(rd1);
+
+    printf("----------------ft_strdup----------------\n\n");
 }

@@ -3,7 +3,8 @@ NAME = libasm.a
 SRCS = Sources/ft_strlen.s\
 		Sources/ft_strcpy.s\
 		Sources/ft_strcmp.s\
-		Sources/ft_write.s
+		Sources/ft_write.s\
+		Sources/ft_read.s\
 
 OBJS = $(SRCS:.s=.o)
 

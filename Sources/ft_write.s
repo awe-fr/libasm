@@ -7,7 +7,7 @@ section .text
 	ft_write:
 		mov rax, 1							;init rax to call write
 		syscall								;call write
-		cmp rax, 0							;check if write fail
+		cmp rax, 0							;check if write failed
 		js error_manager					;if failed go to error func
 		ret									;return result of write
 
